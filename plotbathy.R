@@ -3,11 +3,11 @@ library(marmap)
 library(rgdal)
 library(raster)
 
-bath <- readGEBCO.bathy("GEBCO_2019_-65.3544_61.5383_-41.7087_44.1818.nc")  # your GEBCO sourced netcdf
-bath.f <- fortify.bathy(bath)
+bath <- readGEBCO.bathy("GEBCO_2019_-65.3544_61.5383_-41.7087_44.1818.nc")  # your GEBCO sourced netcdf - this is a marmap fxn
+bath.f <- fortify.bathy(bath) # this is a marmap fxn
 
-coast <- readOGR("gshhg-shp-2.3.7/GSHHS_shp/f/GSHHS_f_L1.shp") # your NOAA sourced coastline shapefiles 
-coast.trim <- crop(coast, extent(-57.5, -47.5, 45, 55))  # trim this down to a reasonable bounding box before plotting
+coast <- readOGR("gshhg-shp-2.3.7/GSHHS_shp/f/GSHHS_f_L1.shp") # your NOAA sourced coastline shapefiles - this is an rgdal fxn
+coast.trim <- crop(coast, extent(-57.5, -47.5, 45, 55))  # trim this down to a reasonable bounding box before plotting - this is a raster fxn
 
 brk <- c(-100,-250,-500)   #define bathymetry breaks
 
