@@ -1,6 +1,7 @@
 library(ggplot2)
 library(marmap)
 library(rgdal)
+library(rgeos)
 library(raster)
 
 bath <- readGEBCO.bathy("GEBCO_2019_-65.3544_61.5383_-41.7087_44.1818.nc")  # your GEBCO sourced netcdf - this is a marmap fxn
